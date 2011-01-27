@@ -1,0 +1,23 @@
+<module>
+	<rawname>misdn</rawname>
+	<repo>unsupported</repo>
+	<type>setup</type>
+	<category>Third Party Addon</category>
+	<name>mISDN</name>
+	<version>2.9.0.0</version>
+	<publisher>Thomas Liske</publisher>
+	<license>GPLv2+</license>
+	<changelog>
+		*2.9.0.0* Added dependency checking at installation for xlst processor
+	</changelog>
+	<depends>
+		<version>ge 2.2</version>
+		<file>/etc/mISDN.conf</file>
+	</depends>
+	<menuitems>
+		<mgeneral sort="1">mISDN General Settings</mgeneral>
+		<mgroups sort="2">mISDN Port Groups</mgroups>
+	</menuitems>
+	<location>release/2.9/misdn-2.9.0.0.tgz</location>
+	<md5sum>78cde5bdd794946d77c253cad98ebffe</md5sum>
+</module>
