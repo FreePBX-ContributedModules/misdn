@@ -8,7 +8,7 @@
 	<publisher>Thomas Liske</publisher>
 	<license>GPLv2+</license>
 	<changelog>
-		*2.9.0.0* Added dependency checking at installation for xlst processor
+		*2.9.0.0* #1565, Added dependency checking at installation for xlst processor
 	</changelog>
 	<depends>
 		<version>ge 2.2</version>
@@ -19,5 +19,5 @@
 		<mgroups sort="2">mISDN Port Groups</mgroups>
 	</menuitems>
 	<location>release/2.9/misdn-2.9.0.0.tgz</location>
-	<md5sum>78cde5bdd794946d77c253cad98ebffe</md5sum>
+	<md5sum>5bc4354a06aeb2f00bd95038836cfddd</md5sum>
 </module>
