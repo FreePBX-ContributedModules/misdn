@@ -59,9 +59,9 @@ if (!misdn_groups_list()) {
 
     foreach(array_keys($groups) as $g) {
       if (count($g)) {
-	    sql('INSERT INTO `misdn_groups` (`name`,`type`,'.implode(',', $keys).") VALUES ('".mysql_escape_string($ptypes[$g]['name'])."',".$ptypes[$g]['type'].",".implode(',', $vals).')');
+	    sql('INSERT INTO `misdn_groups` (`name`,`type`,'.implode(',', $keys).") VALUES ('"._misdn_escape_string($ptypes[$g]['name'])."',".$ptypes[$g]['type'].",".implode(',', $vals).')');
       foreach($groups[$g] as $p) {
-        sql("INSERT INTO `misdn_ports` (`port`, `group`) VALUES ($p, '".mysql_escape_string($ptypes[$g]['name'])."')");
+        sql("INSERT INTO `misdn_ports` (`port`, `group`) VALUES ($p, '"._misdn_escape_string($ptypes[$g]['name'])."')");
       }
     }
   }

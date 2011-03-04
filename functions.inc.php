@@ -100,12 +100,12 @@ EOG;
 // ************** Helper Functions **************
 
 function misdn_general_get($key) {
-    $val = sql("SELECT `data` FROM `misdn` WHERE `keyword`='".mysql_escape_string($key)."' AND `id`='XXXXXX'", "getOne");
+    $val = sql("SELECT `data` FROM `misdn` WHERE `keyword`='"._misdn_escape_string($key)."' AND `id`='XXXXXX'", "getOne");
     return $val;
 }
 
 function misdn_general_set($key, $val) {
-    sql("UPDATE `misdn` SET `data`='".mysql_escape_string($val)."' WHERE `keyword`='".mysql_escape_string($key)."' AND `id`='XXXXXX'");
+    sql("UPDATE `misdn` SET `data`='"._misdn_escape_string($val)."' WHERE `keyword`='"._misdn_escape_string($key)."' AND `id`='XXXXXX'");
 }
 
 /* get all configured groups */
@@ -123,7 +123,7 @@ function misdn_groups_list($type = null) {
 function misdn_groups_get($name) {
     global $misdn_fields;
 
-    $ar = sql("SELECT name, type, $misdn_fields FROM `misdn_groups` WHERE `name` = '".mysql_escape_string($name)."'", "getAll", DB_FETCHMODE_ASSOC);
+    $ar = sql("SELECT name, type, $misdn_fields FROM `misdn_groups` WHERE `name` = '"._misdn_escape_string($name)."'", "getAll", DB_FETCHMODE_ASSOC);
 
     return array_shift($ar);
 }
@@ -132,7 +132,7 @@ function misdn_groups_get($name) {
 function misdn_ports_get_na($name) {
     global $misdn_fields;
 
-    $ar = sql("SELECT `port` FROM `misdn_ports` WHERE `group` <> '".mysql_escape_string($name)."' ORDER BY `port` ASC", "getAll", DB_FETCHMODE_ASSOC);
+    $ar = sql("SELECT `port` FROM `misdn_ports` WHERE `group` <> '"._misdn_escape_string($name)."' ORDER BY `port` ASC", "getAll", DB_FETCHMODE_ASSOC);
 
     $ret = array();
     foreach($ar as $port)
@@ -145,7 +145,7 @@ function misdn_ports_get_na($name) {
 function misdn_ports_get_sel($name) {
     global $misdn_fields;
 
-    $ar = sql("SELECT `port` FROM `misdn_ports` WHERE `group` = '".mysql_escape_string($name)."' ORDER BY `port` ASC", "getAll", DB_FETCHMODE_ASSOC);
+    $ar = sql("SELECT `port` FROM `misdn_ports` WHERE `group` = '"._misdn_escape_string($name)."' ORDER BY `port` ASC", "getAll", DB_FETCHMODE_ASSOC);
 
     $ret = array();
     foreach($ar as $port)
@@ -158,13 +158,18 @@ function misdn_ports_get_sel($name) {
 function misdn_ports_get($name) {
     global $misdn_fields;
 
-    $ar = sql("SELECT `port` FROM `misdn_ports` WHERE `group` = '".mysql_escape_string($name)."'", "getAll", DB_FETCHMODE_ASSOC);
+    $ar = sql("SELECT `port` FROM `misdn_ports` WHERE `group` = '"._misdn_escape_string($name)."'", "getAll", DB_FETCHMODE_ASSOC);
 
     $ret = array();
     foreach($ar as $port)
 	$ret[$port['port']] = 1;
 
     return $ret;
+}
+
+function _misdn_escape_string($var) {
+  global $db;
+  return $db->escapeSimple($var);
 }
 
 /* get all configured ports */
@@ -355,7 +360,7 @@ function misdn_format_sql($ar, $val) {
     settype($v, 'int');
     return $v;
   default:
-    return "'".mysql_escape_string($v)."'";
+    return "'"._misdn_escape_string($v)."'";
   }
 }
 
@@ -365,7 +370,7 @@ function misdn_mgroups_configprocess_mgroups() {
   $gdisplay = isset($_REQUEST['gdisplay'])?$_REQUEST['gdisplay']:null;
 
   if ($_GET['del'] && $gdisplay) {
-    $name = mysql_escape_string($_GET['gdisplay']);
+    $name = _misdn_escape_string($_GET['gdisplay']);
     sql("DELETE FROM `misdn_ports` WHERE `group`='$name'");
     sql("DELETE FROM `misdn_groups` WHERE `name`='$name'");
     unset($_REQUEST['gdisplay']);
@@ -378,13 +383,13 @@ function misdn_mgroups_configprocess_mgroups() {
   $_POST['name'] = trim($_POST['name']);
 
   if ($_POST['editgroup']) {
-    $keyvals = array("`name`='".mysql_escape_string($_POST['name'])."'");
+    $keyvals = array("`name`='"._misdn_escape_string($_POST['name'])."'");
     foreach($misdn_confkeys as $confkey) {
       $keyvals[] = '`'.$confkey['name'].'`='.misdn_format_sql($confkey, $_POST[$confkey['name']]);
     }
 
-    $sql = "UPDATE `misdn_groups` SET ".implode(',', $keyvals)." WHERE `name`='".mysql_escape_string($_POST['editgroup'])."'";
-    sql("DELETE FROM `misdn_ports` WHERE `group`='".mysql_escape_string($_POST['editgroup'])."'");
+    $sql = "UPDATE `misdn_groups` SET ".implode(',', $keyvals)." WHERE `name`='"._misdn_escape_string($_POST['editgroup'])."'";
+    sql("DELETE FROM `misdn_ports` WHERE `group`='"._misdn_escape_string($_POST['editgroup'])."'");
   }
   else {
     $keys = array();
@@ -397,7 +402,7 @@ function misdn_mgroups_configprocess_mgroups() {
     $type = $_POST['grouptype'];
     settype($type, 'int');
 
-    $sql = 'INSERT INTO `misdn_groups` (`name`,`type`,'.implode(',', $keys).") VALUES ('".mysql_escape_string($_POST['name'])."',$type,".implode(',', $vals).')';
+    $sql = 'INSERT INTO `misdn_groups` (`name`,`type`,'.implode(',', $keys).") VALUES ('"._misdn_escape_string($_POST['name'])."',$type,".implode(',', $vals).')';
   }
 
   sql($sql);
@@ -408,7 +413,7 @@ function misdn_mgroups_configprocess_mgroups() {
       $i++;
 
       if ($_POST["port$i"])
-	sql("INSERT INTO `misdn_ports` (`port`, `group`) VALUES ($i, '".mysql_escape_string($_POST['name'])."')");
+	sql("INSERT INTO `misdn_ports` (`port`, `group`) VALUES ($i, '"._misdn_escape_string($_POST['name'])."')");
     }
   }
 
