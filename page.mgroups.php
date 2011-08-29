@@ -50,15 +50,13 @@ function ismISDNGroupName(s) {
     }
 ?>
     </ul>
-</div>
+
 
 <div class="warning">
     <p>
 	<?php echo _("Please remember that you have to restart asterisk after changing port to group assignment!"); ?>
     </p>
 </div>
-
-<div class="content">
 
 <h2><?php echo _("mISDN Settings")?></h2>
 

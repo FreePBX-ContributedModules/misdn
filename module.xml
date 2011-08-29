@@ -1,8 +1,7 @@
 <module>
 	<rawname>misdn</rawname>
 	<repo>unsupported</repo>
-	<type>setup</type>
-	<category>Third Party Addon</category>
+	<category>Settings</category>
 	<name>mISDN</name>
 	<version>2.9.0.1</version>
 	<publisher>Thomas Liske</publisher>
@@ -16,8 +15,8 @@
 		<file>/etc/mISDN.conf</file>
 	</depends>
 	<menuitems>
-		<mgeneral sort="1">mISDN General Settings</mgeneral>
-		<mgroups sort="2">mISDN Port Groups</mgroups>
+		<mgeneral>mISDN General Settings</mgeneral>
+		<mgroups>mISDN Port Groups</mgroups>
 	</menuitems>
 	<location>release/2.9/misdn-2.9.0.1.tgz</location>
 	<md5sum>8d43008a67fa16e34f5db19d17c70828</md5sum>
