@@ -1,7 +1,7 @@
 <module>
 	<rawname>misdn</rawname>
 	<repo>unsupported</repo>
-	<category>Settings</category>
+	<category>Connectivity</category>
 	<name>mISDN</name>
 	<version>2.9.0.1</version>
 	<publisher>Thomas Liske</publisher>
