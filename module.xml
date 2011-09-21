@@ -3,10 +3,11 @@
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
 	<name>mISDN</name>
-	<version>2.9.0.1</version>
+	<version>2.10.0.0</version>
 	<publisher>Thomas Liske</publisher>
 	<license>GPLv2+</license>
 	<changelog>
+		*2.10.0.0* new version changes
 		*2.9.0.1* #4001
 		*2.9.0.0* #1565, Added dependency checking at installation for xlst processor
 	</changelog>
@@ -18,6 +19,6 @@
 		<mgeneral>mISDN General Settings</mgeneral>
 		<mgroups>mISDN Port Groups</mgroups>
 	</menuitems>
-	<location>release/2.9/misdn-2.9.0.1.tgz</location>
-	<md5sum>8d43008a67fa16e34f5db19d17c70828</md5sum>
+	<location>release/2.10/misdn-2.10.0.0.tgz</location>
+	<md5sum>1fe02347ce9c54131084d43211d72282</md5sum>
 </module>
