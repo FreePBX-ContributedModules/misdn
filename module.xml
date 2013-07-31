@@ -21,6 +21,6 @@
 		<mgeneral>mISDN General Settings</mgeneral>
 		<mgroups>mISDN Port Groups</mgroups>
 	</menuitems>
-	<location>release/2.10/misdn-2.10.0.1.tgz</location>
-	<md5sum>ef6423342b4316b715fa8ba8881d4b75</md5sum>
+	<location>release/2.11/misdn-2.11.0.0.tgz</location>
+	<md5sum>55a7cb0edb4463956ee06c76ac279206</md5sum>
 </module>
