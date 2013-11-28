@@ -22,4 +22,4 @@
 	</menuitems>
 	<location>release/2.10/misdn-2.10.0.1.tgz</location>
 	<md5sum>ef6423342b4316b715fa8ba8881d4b75</md5sum>
-</module>
+<supported><version>2.10</version></supported></module>
