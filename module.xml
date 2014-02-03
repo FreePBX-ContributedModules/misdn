@@ -1,26 +1,29 @@
 <module>
-	<rawname>misdn</rawname>
-	<repo>unsupported</repo>
-	<category>Connectivity</category>
-	<name>mISDN</name>
-	<version>2.11.0.0</version>
-	<publisher>Thomas Liske</publisher>
-	<license>GPLv2+</license>
-	<changelog>
+  <rawname>misdn</rawname>
+  <repo>unsupported</repo>
+  <category>Connectivity</category>
+  <name>mISDN</name>
+  <version>2.11.0.0</version>
+  <publisher>Thomas Liske</publisher>
+  <license>GPLv2+</license>
+  <changelog>
 		*2.11.0.0* bump version
 		*2.10.0.1* #5478 
 		*2.10.0.0* new version changes
 		*2.9.0.1* #4001
 		*2.9.0.0* #1565, Added dependency checking at installation for xlst processor
 	</changelog>
-	<depends>
-		<version>ge 2.2</version>
-		<file>/etc/mISDN.conf</file>
-	</depends>
-	<menuitems>
-		<mgeneral>mISDN General Settings</mgeneral>
-		<mgroups>mISDN Port Groups</mgroups>
-	</menuitems>
-	<location>release/2.11/misdn-2.11.0.0.tgz</location>
-	<md5sum>55a7cb0edb4463956ee06c76ac279206</md5sum>
+  <depends>
+    <version>ge 2.2</version>
+    <file>/etc/mISDN.conf</file>
+  </depends>
+  <menuitems>
+    <mgeneral>mISDN General Settings</mgeneral>
+    <mgroups>mISDN Port Groups</mgroups>
+  </menuitems>
+  <location>release/2.11/misdn-2.11.0.0.tgz</location>
+  <md5sum>55a7cb0edb4463956ee06c76ac279206</md5sum>
+  <supported>
+    <version>2.10</version>
+  </supported>
 </module>
