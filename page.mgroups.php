@@ -78,14 +78,14 @@ function ismISDNGroupName(s) {
 
 	    $ar = $currentcomponent->getgeneralarrayitem('misdn', 'group');
 	    $ar2 = $currentcomponent->getgeneralarrayitem('misdn', 'ports');
-	    $delURL = $_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING'].'&del=1';
+	    $delURL = '?'.$_SERVER['QUERY_STRING'].'&del=1';
 	    $currentcomponent->addguielem('_top', new gui_hidden("editgroup", $ar['name']));
 	    $currentcomponent->addguielem('_top', new gui_link('add', _("Delete mISDN Port Group"), $delURL));
 	}
 	else {
 	    /* we create a new entry - so use default values */
 	    $currentcomponent->addguielem('_top', new gui_subheading('head', _("Add Group")));
-	    
+
 	    foreach($misdn_confkeys as $confkey) {
 		$ar[$confkey['name']] = $confkey['default'];
 	    }
@@ -100,7 +100,7 @@ function ismISDNGroupName(s) {
 	    $currentcomponent->addguielem('_top', new gui_selectbox('grouptype', $ptypes, 0, 'Ports Type:', _("Select type of the ports in this group."), false));
 	else
 	    $currentcomponent->addguielem('_top', new gui_text('grouptype', $ptypes[$ar['type']]['text'], 'Ports Type:', _("The type of the ports in this group.")));
-	
+
 	/* create port selection checkboxes */
 	$i = 1;
 	$pna = misdn_ports_get_na($ar['name']);
@@ -108,7 +108,7 @@ function ismISDNGroupName(s) {
 	    $j = $i;
 	    $currentcomponent->addguielem('_top', new gui_subheading("card$i", "$card[0]: $card[1] Port".($card[1]>1 ? 's' : '')));
 
-	    $hasone=0;	
+	    $hasone=0;
 	    for(; $i < $card[1]+$j; $i++) {
 		if (!$pna[$i]) {
 		    if (!$hasone) {
@@ -127,7 +127,7 @@ function ismISDNGroupName(s) {
 	foreach($misdn_confkeys as $confkey) {
 	    $elem = null;
 	    $def = (strlen($confkey['descr']) ? '<br /><br />' : '')._('Default is').' <b>';
-	    
+
     	    switch($confkey['type']) {
 		case 's':
 		case 'i':
@@ -149,7 +149,7 @@ function ismISDNGroupName(s) {
 		    die("Unhandled type '".$confkey['type']."'!");
 		    break;
 	    }
-	
+
 	    $currentcomponent->addguielem('_top', $elem);
 	}
     }
