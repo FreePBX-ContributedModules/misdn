@@ -1,11 +1,15 @@
-# FreePBX language template
-# Copyright 2013 Schmooze Com Inc
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for misdn
+# Copyright (C) 2008-2015 Sangoma, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-20 19:42-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,39 +17,111 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "yes"
+#: page.mgroups.php:87
+msgid "Add Group"
 msgstr ""
 
-msgid "no"
+#: page.mgroups.php:43
+msgid "Add Port Group"
 msgstr ""
 
-msgid "Standard"
+#: page.mgroups.php:122
+msgid "All ports of this device are already assigned to groups!"
 msgstr ""
 
-msgid "Round Robin"
+#: functions.inc.php:275
+msgid "Changes the TX Gain."
 msgstr ""
 
-msgid "Unknown"
+#: install.php:22
+msgid "Checking for an xslt processor.."
 msgstr ""
 
-msgid "International"
+#: misdn.i18n.php:4
+msgid "Connectivity"
 msgstr ""
 
-msgid "National"
+#: page.mgroups.php:129
+msgid "Default is"
 msgstr ""
 
-msgid "Subscriber"
+#: page.mgroups.php:83
+msgid "Delete mISDN Port Group"
 msgstr ""
 
+#: functions.inc.php:282
+msgid "Either if we should produce DTMF Tones ourselves."
+msgstr ""
+
+#: page.mgroups.php:96
+msgid "Extensions"
+msgstr ""
+
+#: install.php:25
+msgid "FATAL: can't continue installing, see module requirements."
+msgstr ""
+
+#: functions.inc.php:307
+msgid "Generic mISDN Device"
+msgstr ""
+
+#: functions.inc.php:270
 msgid "Give a comma separated list (or '*' to match any) of MSNs for TE ports."
 msgstr ""
 
-msgid ""
-"This enables echocancellation, with the given number of taps. Be aware, move "
-"this setting only to outgoing portgroups! A value of zero turns "
-"echocancellation off."
+#: functions.inc.php:263
+msgid "International"
 msgstr ""
 
+#: functions.inc.php:278
+msgid ""
+"International prefix is put before the oad if an according dialplan is set "
+"by the other end."
+msgstr ""
+
+#: functions.inc.php:264
+msgid "National"
+msgstr ""
+
+#: functions.inc.php:277
+msgid ""
+"National prefix is put before the oad if an according dialplan is set by the "
+"other end."
+msgstr ""
+
+#: page.mgroups.php:69
+msgid "No cards found on this system!"
+msgstr ""
+
+#: page.mgroups.php:58
+msgid ""
+"Please remember that you have to restart asterisk after changing port to "
+"group assignment!"
+msgstr ""
+
+#: page.mgroups.php:118
+msgid "Port"
+msgstr ""
+
+#: functions.inc.php:283
+msgid ""
+"Reject code sent to the caller in PMP.<br /><i>16</i> normal call clearing."
+"<br /><i>17</i> user busy.<br /><i>21</i> disconnected."
+msgstr ""
+
+#: functions.inc.php:254
+msgid "Round Robin"
+msgstr ""
+
+#: page.mgroups.php:100
+msgid "Select type of the ports in this group."
+msgstr ""
+
+#: page.mgroups.php:115
+msgid "Selectable ports on this card:"
+msgstr ""
+
+#: functions.inc.php:273
 msgid ""
 "Set the method to use for channel selection.<br /><i>Standard</i> always "
 "chooses the first free channel with the lowest number.<br /><i>Round Robin</"
@@ -53,111 +129,83 @@ msgid ""
 "to balance your load."
 msgstr ""
 
+#: page.mgroups.php:126
+msgid "Settings"
+msgstr ""
+
+#: functions.inc.php:253
+msgid "Standard"
+msgstr ""
+
+#: functions.inc.php:265
+msgid "Subscriber"
+msgstr ""
+
+#: page.mgroups.php:102
+msgid "The type of the ports in this group."
+msgstr ""
+
+#: functions.inc.php:271
+msgid ""
+"This enables echocancellation, with the given number of taps. Be aware, move "
+"this setting only to outgoing portgroups! A value of zero turns "
+"echocancellation off."
+msgstr ""
+
+#: functions.inc.php:274
 msgid ""
 "This option defines, if chan_misdn should check the L1 on a PMP before "
 "making a group call on it. The L1 may go down for PMP Ports so we might need "
 "this."
 msgstr ""
 
-msgid "Changes the TX Gain."
+#: page.mgroups.php:97
+msgid "Trunks"
 msgstr ""
 
+#: functions.inc.php:276
 msgid "Type Of Number in ISDN Terms (for outgoing calls)."
 msgstr ""
 
-msgid ""
-"National prefix is put before the oad if an according dialplan is set by the "
-"other end."
-msgstr ""
-
-msgid ""
-"International prefix is put before the oad if an according dialplan is set "
-"by the other end."
-msgstr ""
-
-msgid "Either if we should produce DTMF Tones ourselves."
-msgstr ""
-
-msgid ""
-"Reject code sent to the caller in PMP.<br /><i>16</i> normal call clearing."
-"<br /><i>17</i> user busy.<br /><i>21</i> disconnected."
-msgstr ""
-
-msgid "Generic mISDN Device"
-msgstr ""
-
-msgid "Checking for an xslt processor.."
-msgstr ""
-
-msgid "nothing found."
-msgstr ""
-
-msgid "FATAL: can't continue installing, see module requirements."
-msgstr ""
-
-msgid "mISDN"
-msgstr ""
-
-msgid "Connectivity"
-msgstr ""
-
-msgid "mISDN General Settings"
-msgstr ""
-
-msgid "mISDN Port Groups"
-msgstr ""
-
-msgid "mISDN Settings"
-msgstr ""
-
-msgid "Add Port Group"
-msgstr ""
-
-msgid ""
-"Please remember that you have to restart asterisk after changing port to "
-"group assignment!"
-msgstr ""
-
-msgid "mISDN Error"
-msgstr ""
-
-msgid "No cards found on this system!"
-msgstr ""
-
-msgid "Delete mISDN Port Group"
-msgstr ""
-
-msgid "Add Group"
-msgstr ""
-
+#: page.mgroups.php:94
 msgid ""
 "Unique name of the mISDN portgroup. Must not be <i>default</i> nor "
 "<i>general</i>."
 msgstr ""
 
-msgid "Extensions"
+#: functions.inc.php:262
+msgid "Unknown"
 msgstr ""
 
-msgid "Trunks"
+#: misdn.i18n.php:3
+msgid "mISDN"
 msgstr ""
 
-msgid "Select type of the ports in this group."
+#: page.mgroups.php:68
+msgid "mISDN Error"
 msgstr ""
 
-msgid "The type of the ports in this group."
+#: misdn.i18n.php:5
+msgid "mISDN General Settings"
 msgstr ""
 
-msgid "Selectable ports on this card:"
+#: misdn.i18n.php:6
+msgid "mISDN Port Groups"
 msgstr ""
 
-msgid "Port"
+#: page.mgeneral.php:22
+#: page.mgroups.php:62
+msgid "mISDN Settings"
 msgstr ""
 
-msgid "All ports of this device are already assigned to groups!"
+#: functions.inc.php:249
+msgid "no"
 msgstr ""
 
-msgid "Settings"
+#: install.php:24
+msgid "nothing found."
 msgstr ""
 
-msgid "Default is"
+#: functions.inc.php:248
+msgid "yes"
 msgstr ""
